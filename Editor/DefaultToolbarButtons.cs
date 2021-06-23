@@ -10,6 +10,10 @@ using UnityEngine;
 
 namespace BennyKok.ToolbarButtons
 {
+    /// <summary>
+    /// We leave this class only as an example, 
+    /// you can copy the buttons you want to your own mutable class.
+    /// </summary>
     public class DefaultToolbarButtons
     {
         private const string scenesFolder = "Scenes";
@@ -41,7 +45,7 @@ namespace BennyKok.ToolbarButtons
             return result;
         }
 
-        [ToolbarButton("d_winbtn_win_max", "Open Terminal")]
+        //[ToolbarButton("d_winbtn_win_max", "Open Terminal")]
         public static void OpenTerminal()
         {
             var projectPath = Directory.GetParent(Application.dataPath).FullName;
@@ -57,7 +61,7 @@ namespace BennyKok.ToolbarButtons
             cmd.Start();
         }
 
-        [ToolbarButton("Folder Icon", "Open Folder")]
+        //[ToolbarButton("Folder Icon", "Open Folder")]
         public static void OpenFolder()
         {
             var projectPath = Directory.GetParent(Application.dataPath).FullName;
@@ -73,14 +77,14 @@ namespace BennyKok.ToolbarButtons
             cmd.Start();
         }
 
-        [ToolbarButton(iconName = "Package Manager", tooltip = "Package Manager")]
+        //[ToolbarButton(iconName = "Package Manager", tooltip = "Package Manager")]
         public static void ShowPackageManager()
         {
             UnityEditor.PackageManager.UI.Window.Open("");
         }
 
 
-        [ToolbarButton("Settings", "Show Settings")]
+        //[ToolbarButton("Settings", "Show Settings")]
         public static void ShowSettings()
         {
             var a = new GenericMenu();
@@ -110,8 +114,8 @@ namespace BennyKok.ToolbarButtons
             return result;
         }
 
-        [ToolbarButton("UnityEditor.SceneHierarchyWindow", "Show Scenes")]
-        [Shortcut("Show Scenes", KeyCode.S)]
+        //[ToolbarButton("UnityEditor.SceneHierarchyWindow", "Show Scenes")]
+        //[Shortcut("Show Scenes", KeyCode.S)]
         public static void ShowScenes()
         {
             var sceneList = AssetDatabase.GetAllAssetPaths().Where(s => s.EndsWith(".unity")).ToList();
@@ -143,7 +147,7 @@ namespace BennyKok.ToolbarButtons
             a.ShowAsContext(10);
         }
 
-        [ToolbarButton("UnityEditor.GameView", "Show Bootstrap Scene")]
+        //[ToolbarButton("UnityEditor.GameView", "Show Bootstrap Scene")]
         public static void ShowBootstrapScene()
         {
             var bootstrapPath = "Assets/" + scenesFolder + "/bootstrap.unity";
